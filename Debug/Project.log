@@ -5,6 +5,7 @@ c:\users\pluser\source\repos\solution\project\coder.h(41): warning C4018: <: н�
 c:\users\pluser\source\repos\solution\project\coder.h(79): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\pluser\source\repos\solution\project\coder.h(108): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\pluser\source\repos\solution\project\coder.h(116): warning C4552: "!=": результат выражения не используется
-c:\users\pluser\source\repos\solution\project\source.cpp(52): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\pluser\source\repos\solution\project\source.cpp(64): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\pluser\source\repos\solution\project\source.cpp(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\pluser\source\repos\solution\project\source.cpp(75): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\pluser\source\repos\solution\project\source.cpp(96): warning C4018: <: несоответствие типов со знаком и без знака
   Project.vcxproj -> C:\Users\Pluser\source\repos\Solution\Debug\Project.exe

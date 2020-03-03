@@ -7,36 +7,47 @@
 
 using namespace std;
 
+struct node
+{
+	node *left = nullptr;
+	node *right = nullptr;
+
+	int priority = 0;
+	char letter = '*';
+
+	int get_priority(int res) const
+	{
+		if (left != nullptr) res = left->get_priority(res);
+		if (right != nullptr) res = right->get_priority(res);
+		res += priority;
+		return res;
+	}
+
+	node()
+	{
+
+	}
+	node(char letter)
+	{
+		this->letter = letter;
+		this->priority = 1;
+	}
+};
+
+void encoder_filler(map<char, string> &encoder, node *current, string code)
+{
+	if (current->letter != '*')
+		encoder[current->letter] = code;
+	else
+	{
+		encoder_filler(encoder, current->left, code + '0');
+		encoder_filler(encoder, current->right, code + '1');
+	}
+}
+
 string encode(string message)
 {
 	string result = "";
-
-	struct node
-	{
-		node *left = nullptr;
-		node *right = nullptr;
-
-		int priority = 0;
-		char letter = '*';
-
-		int get_priority(int res) const
-		{
-			if (left != nullptr) res = left->get_priority(res);
-			if (right != nullptr) res = right->get_priority(res);
-			res += priority;
-			return res;
-		}
-
-		node()
-		{
-
-		}
-		node(char letter)
-		{
-			this->letter = letter;
-			this->priority = 1;
-		}
-	};
 
 	/*
 	map<char, int, greater<int>> alpha;
@@ -78,7 +89,23 @@ string encode(string message)
 		tree.push_back(current);
 	}
 
-	cout << "good";
+	map<char, string> encoder;
+
+	encoder_filler(encoder, tree[0], "");
+
+	for (int i = 0; i < message.length(); i++)
+		result += encoder[message[i]];
+
+	//cout << "good";
+	return result;
+}
+
+string decode(string coded)
+{
+	string result;
+
+
+
 	return result;
 }
 
@@ -87,7 +114,7 @@ int main()
 {
 
 
-	encode("sssstttrrrinnng");
+	cout << encode("beep boop beer!") << endl;
 	/*
 	string tmp = "string";
 	
